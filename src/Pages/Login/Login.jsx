@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import SocialLogin from './SocialLogin';
 
+
 const Login = () => {
     return (
         <>

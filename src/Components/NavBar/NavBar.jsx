@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Menus = () => {
-    const links = ['products', 'about', 'contact', 'blog'];
+    const links = ['home','products', 'about', 'blog'];
     return (
         <>
             {
