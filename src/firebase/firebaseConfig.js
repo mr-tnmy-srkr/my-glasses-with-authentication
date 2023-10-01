@@ -14,13 +14,12 @@ const firebaseConfig = {
   storageBucket: "my-glasses-with-authentication.appspot.com",
   messagingSenderId: "705979265113",
   appId: "1:705979265113:web:3bd6f9589cc243f0880148",
-  measurementId: "G-XC706HG3QV"
+  measurementId: "G-XC706HG3QV",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-
 
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);

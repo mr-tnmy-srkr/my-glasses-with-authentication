@@ -1,34 +1,34 @@
 import { createContext } from "react";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+} from "firebase/auth";
 import { auth } from "../firebase/firebaseConfig";
-
 
 export const AuthContext = createContext(null);
 
 const googleProvider = new GoogleAuthProvider();
 
-
 const AuthProvider = ({ children }) => {
+  //google login
+  const googleLogin = () => {
+    return signInWithPopup(auth, googleProvider);
+  };
+  //sign up
+  const createUser = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
 
-//google login
-const googleLogin = () => {
-  return signInWithPopup(auth, googleProvider)
-}
-
-
-
-
-
-const authentications = {
-  googleLogin,
-
-}
-
+  const authentications = {
+    googleLogin,
+    createUser,
+  };
 
   return (
     <div>
       <AuthContext.Provider value={authentications}>
-      {children}
+        {children}
       </AuthContext.Provider>
     </div>
   );
