@@ -17,7 +17,7 @@ const Footer = () => {
                     </div>
                 </nav>
                 <aside>
-                    <p>Copyright © 2023 - All right reserved by FARHAN</p>
+                    <p>Copyright © 2023 - All right reserved by TANMOY</p>
                 </aside>
             </footer>
         </>
