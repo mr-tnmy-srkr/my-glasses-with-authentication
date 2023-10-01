@@ -6,13 +6,14 @@ const Login = () => {
 
 const {login} = useAuth();
 
-
+//get field value
 const handleLogIn=(e)=>{
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     // console.log(email, password);
 
+//login user
 login(email,password)
 .then(res=>console.log(res.user))
 .catch(err=>console.log(err))
