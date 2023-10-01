@@ -7,7 +7,12 @@ const PrivateRoute = ({ children }) => {
 
   console.log(loading);
   //we,ve to wait here
-  if (loading) return <h1 className="text-5xl">Loading</h1>;
+  if (loading)
+    return (
+      <div className="flex justify-center h-40 w-full">
+        <span className="loading loading-bars loading-lg "></span>
+      </div>
+    );
 
   if (!user?.email) {
     return <Navigate to="/login" />;
