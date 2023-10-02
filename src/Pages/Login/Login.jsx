@@ -47,6 +47,7 @@ login(email,password)
                   placeholder="email"
                   className="input input-bordered"
                   name="email"
+                  required
                 />
               </div>
               <div className="form-control">
@@ -58,6 +59,7 @@ login(email,password)
                   placeholder="password"
                   className="input input-bordered"
                   name="password"
+                  required
                 />
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
@@ -74,8 +76,11 @@ login(email,password)
                   Create an account
                 </Link>
               </label>
-              <SocialLogin />
+              <div className="mb-6">
+             <SocialLogin />
+             </div>
             </form>
+          
           </div>
         </div>
       </div>

@@ -51,6 +51,7 @@ const Register = () => {
                   placeholder="Full name"
                   className="input input-bordered"
                   name="name"
+                  required
                 />
               </div>
               <div className="form-control">
@@ -62,6 +63,7 @@ const Register = () => {
                   placeholder="email"
                   className="input input-bordered"
                   name="email"
+                  required
                 />
               </div>
               <div className="form-control">
@@ -73,6 +75,7 @@ const Register = () => {
                   placeholder="image url"
                   className="input input-bordered"
                   name="img"
+                  required
                 />
               </div>
               <div className="form-control">
@@ -84,6 +87,7 @@ const Register = () => {
                   placeholder="password"
                   className="input input-bordered"
                   name="password"
+                  required
                 />
               </div>
               <div className="form-control mt-6 p-0">
@@ -97,8 +101,11 @@ const Register = () => {
                   Please Login
                 </Link>
               </label>
-              <SocialLogin />
+              <div className="mb-6">
+             <SocialLogin />
+             </div>
             </form>
+            
           </div>
         </div>
       </div>
