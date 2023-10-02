@@ -29,7 +29,7 @@ const NavBar = () => {
                             <Menus />
                         </ul>
                     </div>
-                    <Link to='/' className="btn btn-ghost font-bold normal-case text-3xl">GLASSES</Link>
+                    <Link to='/home' className="btn btn-ghost font-bold normal-case text-3xl">GLASSES</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -42,7 +42,7 @@ const NavBar = () => {
                 <div className="navbar-end">
 
                     {
-                        user?.email ? <div className="dropdown dropdown-end">
+                        user ? <div className="dropdown dropdown-end">
                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
                                     <img src={user.photoURL} alt={user.displayName}/>

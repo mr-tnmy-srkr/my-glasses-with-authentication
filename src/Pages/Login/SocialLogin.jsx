@@ -5,13 +5,13 @@ import toast from "react-hot-toast";
 
 const SocialLogin = () => {
   const navigate = useNavigate();
-  const { googleLogin, githubLogin } = useContext(AuthContext);
+  const { googleLogin, twitterLogin,yahooLogin, githubLogin } = useContext(AuthContext);
 
   const handleSocialLogin = (media) => {
     media()
       .then((res) => {
-        toast.success('user logged in successfully')
-        navigate('/home')
+        toast.success("user logged in successfully");
+        navigate("/home");
       })
       .catch((error) => {
         toast.error(error.message);
@@ -21,14 +21,32 @@ const SocialLogin = () => {
   return (
     <>
       <div className="divider">continue with</div>
-     <div className="flex justify-around">
-     <div className="" onClick={() => handleSocialLogin(googleLogin)}>
-        <button className="btn btn-sm btn-neutral">Google</button>
+      <div className="flex justify-around">
+        <button
+          onClick={() => handleSocialLogin(googleLogin)}
+          className="btn btn-sm btn-neutral"
+        >
+          Google
+        </button>
+        <button
+          onClick={() => handleSocialLogin(githubLogin)}
+          className="btn btn-sm btn-neutral"
+        >
+          Github
+        </button>
+        <button
+          onClick={() => handleSocialLogin(twitterLogin)}
+          className="btn btn-sm btn-neutral"
+        >
+          Twitter
+        </button>
+        <button
+          onClick={() => handleSocialLogin(yahooLogin)}
+          className="btn btn-sm btn-neutral"
+        >
+          Yahoo
+        </button>
       </div>
-      <div className="" onClick={() => handleSocialLogin(githubLogin)}>
-        <button className="btn btn-sm btn-neutral">Github</button>
-      </div>
-     </div>
     </>
   );
 };

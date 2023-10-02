@@ -2,6 +2,8 @@ import { createContext, useEffect, useState } from "react";
 import {
   GithubAuthProvider,
   GoogleAuthProvider,
+  OAuthProvider,
+  TwitterAuthProvider,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -15,8 +17,9 @@ import toast from "react-hot-toast";
 export const AuthContext = createContext(null);
 
 const googleProvider = new GoogleAuthProvider();
-
-const githubProvider = new GithubAuthProvider()
+const githubProvider = new GithubAuthProvider();
+const twitterProvider = new TwitterAuthProvider();
+const yahooProvider = new OAuthProvider('yahoo.com');
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -36,9 +39,20 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, githubProvider);
   };
 
+//twitter login
+const twitterLogin = () => {
+  setLoading(true)
+    return signInWithPopup(auth, twitterProvider);
+}
 
+//
+// yahoo login
+const yahooLogin = () => {
+  setLoading(true)
+    return signInWithPopup(auth, yahooProvider);
+}
 
-  //norma sign up
+  //normal sign up
   const createUser = (email, password) => {
     setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password);
@@ -87,13 +101,15 @@ const logOut = () => {
       unSubscribe();
     };
   }, []);
-  // console.log(user);
+  console.log(user);
 
   const authentications = {
     user,
     loading,
     googleLogin,
     githubLogin,
+    twitterLogin,
+    yahooLogin,
     createUser,
     login,
     logOut,
