@@ -50,7 +50,8 @@ const Register = () => {
             </p>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form onSubmit={handleSubmit} className="card-body">
+           <div className="card-body">
+           <form onSubmit={handleSubmit} >
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Full Name</span>
@@ -110,10 +111,12 @@ const Register = () => {
                   Please Login
                 </Link>
               </label>
-              <div className="mb-6">
+              
+            </form>
+            <div className="">
              <SocialLogin />
              </div>
-            </form>
+           </div>
             
           </div>
         </div>

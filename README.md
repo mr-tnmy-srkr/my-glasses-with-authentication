@@ -1,5 +1,7 @@
 # React Sunglasses
 
+https://www.youtube.com/watch?v=qIccKbwXLvU   (fb auth help)
+
 This is a private React application named "react-sunglasses" with version 0.0.0. It utilizes the ES module system.
 
 ## Scripts

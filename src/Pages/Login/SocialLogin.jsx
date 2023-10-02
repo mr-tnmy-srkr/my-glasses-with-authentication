@@ -5,7 +5,8 @@ import toast from "react-hot-toast";
 
 const SocialLogin = () => {
   const navigate = useNavigate();
-  const { googleLogin, twitterLogin,yahooLogin, githubLogin } = useContext(AuthContext);
+  const { googleLogin, facebookLogin, githubLogin, twitterLogin, yahooLogin } =
+    useContext(AuthContext);
 
   const handleSocialLogin = (media) => {
     media()
@@ -21,12 +22,18 @@ const SocialLogin = () => {
   return (
     <>
       <div className="divider">continue with</div>
-      <div className="flex justify-around">
+      <div className="grid grid-cols-2 gap-3">
         <button
           onClick={() => handleSocialLogin(googleLogin)}
           className="btn btn-sm btn-neutral"
         >
           Google
+        </button>
+        <button
+          onClick={() => handleSocialLogin(facebookLogin)}
+          className="btn btn-sm btn-neutral"
+        >
+          Facebook
         </button>
         <button
           onClick={() => handleSocialLogin(githubLogin)}
@@ -46,6 +53,7 @@ const SocialLogin = () => {
         >
           Yahoo
         </button>
+        
       </div>
     </>
   );

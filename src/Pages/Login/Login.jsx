@@ -44,7 +44,8 @@ login(email,password)
             </p>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form onSubmit={handleLogIn} className="card-body">
+            <div className="card-body">
+            <form onSubmit={handleLogIn} >
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -83,10 +84,12 @@ login(email,password)
                   Create an account
                 </Link>
               </label>
-              <div className="mb-6">
+              
+            </form>
+            <div className="">
              <SocialLogin />
              </div>
-            </form>
+            </div>
           
           </div>
         </div>
